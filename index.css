@@ -275,7 +275,7 @@ h4 {font-size: 1em;}
 }
 
 .scrollto .wrapper::-webkit-scrollbar-thumb {
-    --border-color: var(var(--white-color));
+    --border-color: var(--white-color)
     background-color: var(--light-color);
     border: 3px solid var(--border-color);
     border-radius: 20px;
@@ -760,7 +760,8 @@ form.search :where(i:last-child) {
 --------------------*/
 
 
-.page-home main > div:not(.slider) {
+.page-home main > div:not(.slider, .frominsta),
+.inner-footer {
     padding: 100px 0;
 }
 
@@ -777,12 +778,12 @@ main > div .heading {
     --grid-col: 260px;
 }
 
-:is(.guide) .dot-image .thumbnail {
+:is(.guide, .fromblog) .dot-image .thumbnail {
     position: relative;
     opacity: unset;
 }
 
-.guide .dot-image .thumbnail img {
+:is(.guide, .fromblog) .dot-image .thumbnail img {
     width: 100%;
 }
 
@@ -796,7 +797,7 @@ main > div .heading {
     line-height: 1.4;
 }
 
-.guide .wrapper .item {
+.scrollto .wrapper .item {
     width: 290px;
     scroll-snap-align: start;
     flex-shrink: 0;
@@ -909,6 +910,128 @@ main > div .heading {
     color: var(--white-color);
 }
 
+.sort-data {
+    display: none;
+    animation: var(--fade);
+}
+
+.sort-data.active {
+    display: block;
+}
+
+
+
+/*------------------- 
+    #BANNER
+--------------------*/
+
+
+.banner {
+    background-color: var(--light-color);
+    background-image: url(assets/banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-origin: border-box;
+}
+
+.banner .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.banner .content span {
+    font-size: var(--fs14);
+    text-transform: uppercase;
+}
+
+.banner h3 {
+    --fs-max: 80px
+}
+
+
+/*------------------- 
+    #FROM BLOG
+--------------------*/
+
+
+.fromblog .dot-title {
+    --primary-font: var(--second-font);
+    --fs14: 18px;
+    --fs600: 400;
+    margin-top: 15px;
+}
+
+.fromblog .dot-info > a {
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid var(--light-color);
+    color: var(--grey-color);
+    padding: 1px 10px;
+    transition: var(--transition-background),
+                var(--transition-color),
+                var(--transition-border);
+}
+
+.fromblog .dot-info > a:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    border-color: var(--dark-color);
+}
+
+.fromblog .button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/*------------------- 
+    #FROM INSTAGRAM
+--------------------*/
+
+
+.frominsta .container.wide {
+    --mx-width: none;
+    --gutter: 0;
+}
+
+.frominsta .dotgrid .wrapper {
+    background-color: var(--light-color);
+}
+
+.frominsta img {
+    width: 100%;
+}
+
+.frominsta .dot-image {
+    margin: 0;
+}
+
+.frominsta .actions {
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.frominsta .scrollto .wrapper::-webkit-scrollbar-thumb {
+    --border-color: var(--light-color);
+    background-color: var(--grey-color);
+}
+
+
+/*------------------- 
+    #FOOTER
+--------------------*/
 
 
 
@@ -919,6 +1042,16 @@ main > div .heading {
 
 
 
+
+
+
+
+
+@media (min-width: 768px) {
+    .banner {
+        background-size: contain;
+    }
+}
 
 @media (min-width: 992px) {
     .menu-trigger {
@@ -1006,6 +1139,18 @@ main > div .heading {
     
     .slider .button a:hover {
         border-color: var(--dark-color);
+    }
+
+    .scrollto .wrapper {
+        --display: grid;
+        padding: 0;
+        overflow: unset;
+        scroll-snap-type: unset;
+        overscroll-behavior-inline: unset;
+    }
+
+    .scrollto .wrapper .item {
+        width: unset;
     }
 }
 
