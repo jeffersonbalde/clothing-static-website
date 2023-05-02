@@ -30,6 +30,24 @@ submenu.forEach((menu) => menu.addEventListener('click', function(e) {
     }
 }))
 
+// sorter
+const sorter = document.querySelector('.sort-list');
+
+if(sorter) {
+    const sortLi = sorter.querySelectorAll('li');
+    sorter.querySelector('.opt-trigger').addEventListener('click', function (){
+        sorter.querySelector('ul').classList.toggle('show');
+    })
+
+    sortLi.forEach((item) => item.addEventListener('click', function() {
+        sortLi.forEach((li) => li != this ? li.classList.remove('active') : null);
+
+        this.classList.add('active');
+        sorter.querySelector('.opt-trigger span.value').textContent = this.textContent;
+        sorter.querySelector('ul').classList.toggle('show');
+    }))
+}
+
 // slider
 const swiper = new Swiper('.sliderbox', {
 
@@ -42,4 +60,35 @@ const swiper = new Swiper('.sliderbox', {
       el: '.swiper-pagination',
       clickable: true,  
     },
+  });
+
+//   carousel
+  const carousel = new Swiper('.carouselbox', {
+
+    spaceBetween: 30,
+    slidePerView: 'auto',
+    centeredSlides: true,
+    
+    // If we need pagination
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        481: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            centeredSlides: false,
+        },
+        640: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            centeredSlides: false,
+        },
+        992: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            centeredSlides: false,
+        }
+    }
   });

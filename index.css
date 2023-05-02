@@ -162,6 +162,10 @@ h4 {font-size: 1em;}
     font-size: clamp(30px, -0.875em + 8.333vw, var(--fs-max, 40px));
 }
 
+.grey-color {
+    color: var(--grey-color);
+}
+
 
 /*------------------- 
     Group Selector
@@ -258,6 +262,8 @@ h4 {font-size: 1em;}
 }
 
 .scrollto > .wrapper {
+    --display: flex;
+    padding-bottom: 20px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
@@ -672,7 +678,7 @@ form.search :where(i:last-child) {
 }
 
 .slider .title-info .price {
-    position: relative;
+    position: relative;     
     font-size: 30px;
     width: 80px;
     height: 80px;
@@ -683,20 +689,6 @@ form.search :where(i:last-child) {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-}
-
-.slider h3 {
-    --fs-max: 80px;
-    color: var(--white-color);
-}
-
-.slider .button a {
-    border-color: var(--white-color);
-    color: var(--white-color);
-}
-
-.slider .button a:hover {
-    border-color: var(--dark-color);
 }
 
 .slider .custom-pagination {
@@ -763,22 +755,159 @@ form.search :where(i:last-child) {
 }
 
 
+/*------------------- 
+    #GUIDE
+--------------------*/
 
 
+.page-home main > div:not(.slider) {
+    padding: 100px 0;
+}
+
+.guide {
+    background-color: var(--flashwite-color);
+}
+
+main > div .heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.guide .dotgrid .wrapper {
+    --grid-col: 260px;
+}
+
+:is(.guide) .dot-image .thumbnail {
+    position: relative;
+    opacity: unset;
+}
+
+.guide .dot-image .thumbnail img {
+    width: 100%;
+}
+
+.guide .dot-title {
+    --fs14: 18px;
+    --fs600: 400;
+    padding: 10px 0;
+}
+
+.guide .dot-info p {
+    line-height: 1.4;
+}
+
+.guide .wrapper .item {
+    width: 290px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+.guide .scrollto .wrapper::-webkit-scrollbar-thumb {
+    --border-color: #f0f9f8;
+}
 
 
+/*------------------- 
+    #CAROUSEL
+--------------------*/
 
 
+.carousel .inner-wrapper {
+    position: relative;
+}
+
+.carousel .dotgrid .wrapper {
+    display: flex;
+    grid-template-columns: unset;
+    gap: unset;
+}
+
+.carousel .nav > div::after {
+    content: none;
+}
+
+.carousel .nav > div {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--grey-color);
+    border-radius: 50%;
+    color: var(--dark-color);
+    font-size: 20px;
+    -webkit-tap-highlight-color: transparent;
+    transition: var(--transition-background),
+                var(--transition-color),
+                var(--transition-border);
+}
+
+.carousel .nav > div:hover {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+.carousel .nav .swiper-button-disabled {
+    opacity: 0;
+}
 
 
+/*------------------- 
+    #BYCATS
+--------------------*/
 
 
+.bycats .heading {
+    display: flex;
+    justify-content: center;
+}
 
+.bycats .heading > span {
+    font-family: var(--second-font);
+    font-size: 32px;
+    margin-right: 20px;
+}
 
+.bycats .heading > span,
+.opt-trigger {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
 
+.sort-list .wrap {
+    position: relative;
+}
 
+.sort-list .wrap ul {
+    position: absolute;
+    text-align: left;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: var(--white-color);
+    box-shadow: var(--shadow);
+    z-index: 10;
+    display: none;
+    animation: var(--fade);
+}
 
+.sort-list .wrap ul.show {
+    display: block;
+}
 
+.sort-list ul li a {
+    display: block;
+    padding: 5px 20px;
+    transition: var(--transition-background), var(--transition-color);
+}
+
+.sort-list ul li a:hover,
+.sort-list ul li.active a {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
 
 
 
@@ -864,6 +993,26 @@ form.search :where(i:last-child) {
         right: 0;
         background-color: transparent ;
     }
+
+    .slider h3 {
+        --fs-max: 80px;
+        color: var(--white-color);
+    }
+    
+    .slider .button a {
+        border-color: var(--white-color);
+        color: var(--white-color);
+    }
+    
+    .slider .button a:hover {
+        border-color: var(--dark-color);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel .dotgrid .item {
+        width: 270px;
+    }
 }
 
 
@@ -877,5 +1026,19 @@ form.search :where(i:last-child) {
 @media (min-width: 1400px) {
     .mega-content {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .carousel .inner-wrapper {
+        max-width: 1250px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .carousel .nav > .swiper-button-next {
+        right: -40px;
+    }
+
+    .carousel .nav > .swiper-button-prev {
+        left: -40px;
     }
 }
