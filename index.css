@@ -1544,6 +1544,31 @@ main > div .heading {
     --gutter: 30px;
 }
 
+.product .product-about.custom h3 {
+    font-size: 50px;
+    font-weight: var(--fw600);
+    text-align: center;
+    color: var(--light-color);
+}
+
+.product .review {
+    max-width: 770px;
+}
+
+.product .review .head-review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--light-color);
+}
+
+
+
+
+
+
+
 
 
 
