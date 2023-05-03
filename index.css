@@ -1166,9 +1166,10 @@ main > div .heading {
 
 
 .inner-footer .bottom,
-.page-single .carousel {
+.page-single .carousel,
+.cart-total .grouping > div {
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 }
 
 
@@ -1853,7 +1854,7 @@ form .button button,
     margin-bottom: 30px;
 }
 
-.product-list .grouping {
+.product-list li .grouping {
     position: relative;
     float: left;
     padding-left: 45px;
@@ -2251,7 +2252,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 
-.page-cart .product-list li {
+.page-cart .product-list li,
+.page-cart .cart-total .grouping {
     display: grid;
     margin: 0;
 }
@@ -2304,11 +2306,52 @@ input[type="range"]::-webkit-slider-thumb {
     display: none;
 }
 
+.cart-total .has-bg::before, 
+.cart-total .has-bg::after {
+    content: '';
+    background-color: var(--dark-color);
+    width: 100%;
+    bottom: auto;
+    top: 0;
+}
 
+.cart-total .has-bg::before {
+    right: 100%;
+    left: auto;
+}
 
+.cart-total .has-bg::after {
+    left: 100%;
+}
 
+.cart-total .product-list {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
 
+.cart-total .grouping {
+    font-weight: var(--fw600);
+}
 
+.cart-total .add-note {
+    text-align: center;
+}
+
+.cart-total .add-note textarea {
+    max-width: 300px;
+    border-color: transparent;
+    outline: 0;
+    color: var(--white-color);
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 10px;
+    transition: var(--transition-border);
+}
+
+.cart-total .add-note :is(textarea:hover, textarea:focus, :not(:placeholder-shown)) {
+    border-color: var(--grey-color);
+}
 
 
 
@@ -2396,7 +2439,8 @@ input[type="range"]::-webkit-slider-thumb {
         display: block;
     }
 
-    .page-cart .product-list li {
+    .page-cart .product-list li,
+    .page-cart .cart-total .grouping {
         grid-template-columns: 1fr 1fr;
     }
 
