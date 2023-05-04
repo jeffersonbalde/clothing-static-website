@@ -751,7 +751,8 @@ form :where(input, textarea, select)::placeholder {
     height: 430px;
 }
 
-.ob-cover img {
+.ob-cover img,
+.slider video {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -851,6 +852,7 @@ form :where(input, textarea, select)::placeholder {
 }
 
 
+
 /*------------------- 
     #GUIDE
 --------------------*/
@@ -903,6 +905,13 @@ main > div .heading {
     --border-color: #f0f9f8;
 }
 
+.guide img {
+    width: 370px;
+    height: 250px;
+    object-fit: cover;
+    background-position: 10ch 8em;
+}
+
 
 /*------------------- 
     #CAROUSEL
@@ -944,6 +953,14 @@ main > div .heading {
 
 .carousel .nav .swiper-button-disabled {
     opacity: 0;
+}
+
+.carousel img {
+    width: 244.33px;
+    height: 325.76px;
+    object-fit: cover;
+    display: flex;
+    margin: 0 auto;
 }
 
 
