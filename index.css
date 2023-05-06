@@ -776,9 +776,9 @@ form :where(input, textarea, select)::placeholder {
 
 .slider .title-info .price {
     position: relative;     
-    font-size: 30px;
-    width: 80px;
-    height: 80px;
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
     margin-top: -40px;
     background-color: var(--dark-color);
     color: var(--white-color);
@@ -850,6 +850,10 @@ form :where(input, textarea, select)::placeholder {
 .slider .swiper-slide-active .title-info .button {
     transition-delay: .75s;
 }
+
+/* .slider h3 {
+    font-family: var(--primary-font)
+} */
 
 
 
@@ -1034,6 +1038,12 @@ main > div .heading {
     display: block;
 }
 
+.bycats img {
+    width: 230.2px;
+    height: 280px;
+    object-fit: cover;
+}
+
 
 
 /*------------------- 
@@ -1042,8 +1052,8 @@ main > div .heading {
 
 
 .banner {
-    background-color: var(--light-color);
-    background-image: url(assets/banner.png);
+    background-color: rgb(250, 244, 230);
+    background-image: url('https://im.uniqlo.com/global-cms/spa/resde2e310551d432d3308b75c405114e06fr.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: right;
@@ -1102,6 +1112,12 @@ main > div .heading {
     margin-top: 40px;
 }
 
+.fromblog img {
+    width: 311.6px;
+    height: 168.43px;
+    object-fit: cover;
+}
+
 
 /*------------------- 
     #FROM INSTAGRAM
@@ -1141,6 +1157,12 @@ main > div .heading {
 .frominsta .scrollto .wrapper::-webkit-scrollbar-thumb {
     --border-color: var(--flashwite-color)
     background-color: var(--grey-color);
+}
+
+.frominsta img {
+    /* width: 204.96px; */
+    height: 204.95px;
+    object-fit: cover;
 }
 
 
@@ -2052,6 +2074,11 @@ form .button button,
     max-height: 400px;
 }
 
+.cart-menu img {
+    width: 70px;
+    height: 93.33px;
+    object-fit: cover;
+}
 
 
 /*------------------- 
@@ -2240,6 +2267,11 @@ input[type="range"]::-webkit-slider-thumb {
     --grid-col: 221px;
 }
 
+.category-content .dotgrid img {
+    width: 294.56px;
+    height: 340.06px;
+    object-fit: cover;
+}
 
 
 
@@ -2622,9 +2654,9 @@ input[type="range"]::-webkit-slider-thumb {
         left: 0;
     }
 
-    .custom-pagination {
+    /* .custom-pagination {
         display: none;
-    }
+    } */
 }
 
 @media (min-width: 768px) {
@@ -2710,6 +2742,12 @@ input[type="range"]::-webkit-slider-thumb {
     __#Sub menu & Mega__
     */
 
+    .sub-mega .item img {
+        width: 187.74px;
+        height: 250.31px;
+        object-fit: cover;
+    }
+
     .mega-content {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -2770,6 +2808,8 @@ input[type="range"]::-webkit-slider-thumb {
     .slider h3 {
         --fs-max: 80px;
         color: var(--white-color);
+        font-family: var(--primary-font);
+        font-size: 40px;
     }
     
     .slider .button a {
@@ -2864,4 +2904,9 @@ input[type="range"]::-webkit-slider-thumb {
     .product.dotgrid .image {
         overflow: unset;
     }
+}
+
+.page-checkout .dot-info .dot-title {
+    font-size: 14px;
+    margin: 0;
 }
